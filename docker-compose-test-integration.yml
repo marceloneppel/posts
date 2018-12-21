@@ -1,0 +1,32 @@
+version: "3"
+services:
+  test_integration:
+    container_name: test_integration
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        COMMAND: run test-integration
+    networks:
+      service1_net:
+        ipv4_address: 172.22.0.100
+    ports:
+      - "3000:3000"
+    links:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: mongo
+    volumes:
+      - ./data:/data/db
+    networks:
+      service1_net:
+        ipv4_address: 172.22.0.101
+    ports:
+      - "27017:27017"
+networks:
+  service1_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.22.0.0/16

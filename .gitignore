@@ -1,0 +1,5 @@
+.idea/
+app/android/app/build/
+app/node_modules/
+backend/node_modules/
+data/
