@@ -7,5 +7,5 @@
 ### To start the backend:
 `docker-compose -f docker-compose-start.yml up`
 
-### To start the app in the Android emulator (inside app dir):
+### To start the app in the Android emulator:
 `cd app && npm install && npm install -g react-native-cli && react-native run-android`
