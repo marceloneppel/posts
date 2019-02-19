@@ -1,3 +1,7 @@
+# Posts
+
+React Native sample app with Node.js backend running on Docker.
+
 ### To run the unit tests:
 `docker-compose -f docker-compose-test-unit.yml up`
 
